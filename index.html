@@ -23,6 +23,7 @@
   --red:#FF2300;          /* exact red behind the camera photo */
   --red-deep:#C41A00;
   --navy:#0E2136;         /* gown + evening sky */
+  --navy-photo:#16395C;   /* exact backdrop of the graduation cutout */
   --navy-2:#16314F;
   --sky:#C5E4FF;          /* sky above St Peter's Square */
   --hood:#9B1B30;         /* MMU hood maroon, the thread that ties both photos */
@@ -78,15 +79,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:760px){.bar nav{display:none}}
 
 /* ---------- split hero ---------- */
-.hero{display:flex;min-height:min(86vh,760px);position:relative;overflow:hidden;background:var(--navy)}
+.hero{display:flex;min-height:min(86vh,760px);position:relative;overflow:hidden;background:var(--navy-photo)}
 .side{position:relative;flex:1 1 0;min-width:0;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;text-decoration:none}
 .side.passion{background:var(--red);color:var(--on-red)}
-.side.profession{background:var(--navy);color:var(--on-navy)}
+.side.profession{background:var(--navy-photo);color:var(--on-navy)}
 .hero:hover .side{flex-grow:.8}
 .hero .side:hover{flex-grow:1.35}
 .side img{position:absolute;bottom:0;height:92%;width:auto;max-width:none;object-fit:contain;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .side.passion img{right:2%;height:84%;transform-origin:bottom right}
-.side.profession img{left:-4%;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 98%);mask-image:linear-gradient(90deg,#000 55%,transparent 98%);opacity:.92}
+.side.profession img{left:-1%;height:84%;transform-origin:bottom left}
+.side.profession .line{max-width:24ch}
 .side:hover img{transform:scale(1.03)}
 .side .copy{position:relative;z-index:2;padding:120px max(28px,env(safe-area-inset-left,0px)) 40px;max-width:520px}
 .side.profession .copy{margin-left:auto;padding-left:28px;padding-right:max(28px,env(safe-area-inset-right,0px));text-align:right}
@@ -110,7 +112,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .side{min-height:440px}
   .side img{height:96%}
   .side.passion img{right:-10%}
-  .side.profession img{left:auto;right:-14%;-webkit-mask-image:linear-gradient(270deg,#000 50%,transparent 95%);mask-image:linear-gradient(270deg,#000 50%,transparent 95%)}
+  .side.profession img{left:auto;right:-16%;height:90%}
   .side.profession .copy{margin-left:0;text-align:left;padding-left:max(24px,env(safe-area-inset-left,0px))}
   .side.profession .line{margin-left:0}
     .side .copy{padding:24px max(24px,env(safe-area-inset-left,0px)) 32px;max-width:66%}
@@ -352,7 +354,7 @@ body[data-mode="profession"] .reel{opacity:.3}
     </div>
   </a>
   <a class="side profession" href="#profession">
-        <img src="assets/img/pri-data.jpg" alt="Priyanshu in his MMU graduation gown in St Peter's Square, Manchester" width="1000" height="1778">
+        <img src="assets/img/pri-data.webp" alt="Priyanshu in his Manchester Metropolitan University graduation gown and hood" width="772" height="950">
     <div class="copy">
       <span class="tag">Profession · Data science</span>
       <div class="label">Profession</div>
