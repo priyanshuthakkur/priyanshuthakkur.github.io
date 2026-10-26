@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Priyanshu Thakur · Passion &amp; Profession">
+<meta property="og:description" content="Content creator and MSc Data Science graduate (Distinction) based in Manchester, UK.">
+<meta property="og:image" content="https://priyanshuthakkur.github.io/assets/img/og.jpg">
+<meta property="og:url" content="https://priyanshuthakkur.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2716%27 height=%2732%27 fill=%27%23FF2300%27/%3E%3Crect x=%2716%27 width=%2716%27 height=%2732%27 fill=%27%230E2136%27/%3E%3C/svg%3E">
+<title>Priyanshu Thakur Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Priyanshu Thakur: content creator and MSc Data Science graduate (Distinction) based in Manchester, UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Caveat+Brush&family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:wght@400;500;700&display=swap">
+<style>
+/* Layout concept: one person, two worlds. A split hero (shutter-red Passion / graduation-navy Profession)
+   that widens toward whichever side you lean into; the page then alternates between the two worlds and
+   meets in a shared band, with a Passion · Both · Profession switch that filters the work and timeline. */
+:root{
+  --red:#FF2300;          /* exact red behind the camera photo */
+  --red-deep:#C41A00;
+  --navy:#0E2136;         /* gown + evening sky */
+  --navy-2:#16314F;
+  --sky:#C5E4FF;          /* sky above St Peter's Square */
+  --hood:#9B1B30;         /* MMU hood maroon, the thread that ties both photos */
+  --paper:#F1F3F6;        /* neutral page, cool-biased toward the navy */
+  --card:#FFFFFF;
+  --ink:#121A24;
+  --muted:#5A6676;
+  --line:#D7DDE5;
+  --navy-text:#16314F;    /* navy used as text/ink on the neutral page */
+  --hood-text:#9B1B30;
+  --night:#0B121B;        /* fixed dark for bar + contact, both themes */
+  --on-red:#FFF6F0;
+  --on-navy:#EAF3FF;
+  --f-display:"Anybody","Arial Narrow",Impact,sans-serif;
+  --f-body:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --f-hand:"Caveat Brush","Comic Sans MS",cursive;
+  --gutter-l:max(16px,env(safe-area-inset-left,0px));
+  --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  --max:1180px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0D141E;--card:#142030;--ink:#E8EEF5;--muted:#9AA8B8;--line:#26354A;--navy-text:#C5E4FF;--hood-text:#F08A9C;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0D141E;--card:#142030;--ink:#E8EEF5;--muted:#9AA8B8;--line:#26354A;--navy-text:#C5E4FF;--hood-text:#F08A9C;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);line-height:.95;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.eyebrow{font:600 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase}
+.mono{font-family:var(--f-mono)}
+
+/* ---------- top bar ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--night)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--night);color:#F1F3F6}
+.bar .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;flex-wrap:wrap}
+.bar .brand{font:800 18px/1 var(--f-display);font-stretch:125%;text-decoration:none;letter-spacing:.01em;margin-right:auto}
+.bar nav{display:flex;gap:18px;font-size:14px}
+.bar nav a{text-decoration:none;opacity:.8}
+.bar nav a:hover{opacity:1;text-decoration:underline}
+.mode{display:inline-flex;border:1px solid #ffffff40;border-radius:999px;padding:3px;gap:2px;font:600 12px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.mode button{all:unset;cursor:pointer;padding:7px 11px;border-radius:999px;color:#F1F3F6;opacity:.75}
+.mode button[aria-pressed="true"]{opacity:1}
+.mode button[data-m="passion"][aria-pressed="true"]{background:var(--red);color:var(--on-red)}
+.mode button[data-m="both"][aria-pressed="true"]{background:linear-gradient(90deg,var(--red) 50%,var(--navy-2) 50%);color:#fff}
+.mode button[data-m="profession"][aria-pressed="true"]{background:var(--sky);color:var(--navy)}
+@media (max-width:760px){.bar nav{display:none}}
+
+/* ---------- split hero ---------- */
+.hero{display:flex;min-height:min(86vh,760px);position:relative;overflow:hidden;background:var(--navy)}
+.side{position:relative;flex:1 1 0;min-width:0;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;text-decoration:none}
+.side.passion{background:var(--red);color:var(--on-red)}
+.side.profession{background:var(--navy);color:var(--on-navy)}
+.hero:hover .side{flex-grow:.8}
+.hero .side:hover{flex-grow:1.35}
+.side img{position:absolute;bottom:0;height:92%;width:auto;max-width:none;object-fit:contain;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.side.passion img{right:2%;height:84%;transform-origin:bottom right}
+.side.profession img{left:-4%;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 98%);mask-image:linear-gradient(90deg,#000 55%,transparent 98%);opacity:.92}
+.side:hover img{transform:scale(1.03)}
+.side .copy{position:relative;z-index:2;padding:120px max(28px,env(safe-area-inset-left,0px)) 40px;max-width:520px}
+.side.profession .copy{margin-left:auto;padding-left:28px;padding-right:max(28px,env(safe-area-inset-right,0px));text-align:right}
+.side .label{font:900 clamp(40px,6.2vw,96px)/.85 var(--f-display);letter-spacing:-.01em;text-transform:uppercase}
+.side.passion .label{font-stretch:150%;font-style:italic}
+.side.profession .label{font-stretch:62%;font-weight:800;font-size:clamp(36px,5.4vw,88px)}
+.side .line{margin-top:14px;font-size:18px;max-width:26ch}
+.side .copy{text-shadow:0 1px 14px #0000004d}
+.side.passion .copy{max-width:min(520px,48%)}
+.side.profession .line{margin-left:auto}
+.side .go{margin-top:18px;display:inline-flex;gap:8px;align-items:center;font:600 13px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid currentColor;padding-bottom:4px}
+.side .tag{display:block;margin-bottom:12px;font:600 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.namecard{position:absolute;left:50%;top:26px;transform:translateX(-50%);z-index:5;background:var(--paper);color:var(--ink);padding:16px 22px 18px;text-align:center;box-shadow:0 18px 50px #0006;border-radius:2px;pointer-events:none;width:max-content;max-width:calc(100% - 32px)}
+.namecard h1{font-size:clamp(26px,3.4vw,44px);font-weight:900;font-stretch:112%;text-transform:uppercase;letter-spacing:.005em}
+.namecard p{font:600 12px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.namecard .split{display:flex;justify-content:center;gap:10px;align-items:center;margin-top:10px;font:600 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.namecard .split i{display:inline-block;width:10px;height:10px;border-radius:50%}
+@media (max-width:820px){
+  .hero{flex-direction:column;min-height:0}
+  .hero:hover .side,.hero .side:hover{flex-grow:1}
+  .side{min-height:440px}
+  .side img{height:96%}
+  .side.passion img{right:-10%}
+  .side.profession img{left:auto;right:-14%;-webkit-mask-image:linear-gradient(270deg,#000 50%,transparent 95%);mask-image:linear-gradient(270deg,#000 50%,transparent 95%)}
+  .side.profession .copy{margin-left:0;text-align:left;padding-left:max(24px,env(safe-area-inset-left,0px))}
+  .side.profession .line{margin-left:0}
+    .side .copy{padding:24px max(24px,env(safe-area-inset-left,0px)) 32px;max-width:66%}
+  .namecard{position:relative;left:auto;top:auto;transform:none;order:0;width:100%;max-width:none;box-shadow:none;border-radius:0;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+}
+
+/* ---------- intro / stats ---------- */
+.intro{padding-block:72px 56px}
+.intro .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.intro h2{font-size:clamp(32px,4.4vw,56px);font-weight:800;font-stretch:90%}
+.intro h2 em{font-style:normal;color:var(--red)}
+.intro h2 b{color:var(--navy-text)}
+.intro .body{display:grid;gap:14px;color:var(--muted);max-width:62ch}
+.intro .body strong{color:var(--ink);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+.stat{background:var(--card);padding:20px 18px}
+.stat b{display:block;font:800 30px/1 var(--f-display);font-stretch:80%}
+.stat span{display:block;margin-top:8px;font-size:14px;color:var(--muted);line-height:1.35}
+.stat.r b{color:var(--red)} .stat.n b{color:var(--navy-text)}
+@media (max-width:820px){.intro .grid{grid-template-columns:1fr;gap:24px}.stats{grid-template-columns:1fr 1fr}}
+
+/* ---------- section heads ---------- */
+.sec{padding-block:80px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-size:clamp(40px,6.4vw,84px);font-weight:900;text-transform:uppercase}
+.sec-head p{max-width:46ch;font-size:16px}
+
+/* ---------- passion world ---------- */
+.passion-sec{background:var(--red);color:var(--on-red);overflow:hidden}
+.passion-sec .sec-head h2{font-stretch:150%;font-style:italic}
+.passion-sec .sec-head p{color:#FFE3D6}
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.reel{display:flex;flex-direction:column;gap:12px;min-width:0}
+.phone{position:relative;aspect-ratio:9/16;max-width:100%;background:#000;border-radius:26px;padding:7px;box-shadow:0 0 0 2px #00000030,0 20px 40px #6a0e0040}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:20px;background:#111}
+.phone .play{all:unset;cursor:pointer;position:absolute;inset:7px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(180deg,#0000 55%,#0009)}
+.phone .play span{width:62px;height:62px;border-radius:50%;background:#fffffff0;display:grid;place-items:center;box-shadow:0 6px 18px #0005;transition:transform .2s}
+.phone .play:hover span{transform:scale(1.08)}
+.phone .play svg{width:22px;height:22px;margin-left:4px;fill:var(--red)}
+.phone.playing .play{display:none}
+.reel h3{font:700 17px/1.25 var(--f-body)}
+.reel p{font-size:14px;color:#FFE3D6;line-height:1.45}
+.reel .who{font:600 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.85}
+@media (max-width:980px){.reels{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:460px){.reels{grid-template-columns:1fr 1fr;gap:14px}.phone{border-radius:18px;padding:5px}.phone video,.phone .play{border-radius:14px}.phone .play{inset:5px}}
+
+.es{margin-top:88px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:48px;align-items:center}
+.es h3{font-size:clamp(34px,4.6vw,58px);font-weight:900;font-stretch:140%;font-style:italic;text-transform:uppercase}
+.es .role{margin-top:14px;font:600 13px/1.5 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.es .text{display:grid;gap:14px;margin-top:18px;color:#FFE9DF;max-width:52ch}
+.award{display:inline-flex;align-items:center;gap:12px;margin-top:22px;background:var(--on-red);color:var(--red-deep);padding:10px 16px 10px 12px;border-radius:999px;font-weight:700;font-size:15px;box-shadow:0 8px 20px #6a0e0030}
+.award svg{width:26px;height:26px;fill:var(--red)}
+.softs{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.softs span{border:1.5px solid #FFFFFF80;border-radius:999px;padding:5px 12px;font-size:13px}
+.es .links{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;font:600 13px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.es .links a{text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:3px}
+.table{position:relative;height:540px;min-width:0}
+.print{all:unset;cursor:zoom-in;position:absolute;width:44%;max-width:250px;background:#FBFAF7;padding:9px 9px 34px;box-shadow:0 14px 30px #4a0a0055,0 2px 4px #0003;transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .3s;will-change:transform}
+.print{display:block}
+.print img{width:100%;height:auto;aspect-ratio:900/1253;object-fit:cover}
+.print i{position:absolute;left:12px;right:12px;bottom:7px;font:400 18px/1 var(--f-hand);color:#2a2a2a;font-style:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.print:hover,.print:focus-visible{box-shadow:0 22px 44px #4a0a0070;z-index:20}
+.shuffle{all:unset;cursor:pointer;position:absolute;right:0;bottom:-6px;z-index:30;background:var(--ink);color:#fff;font:600 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:11px 16px;border-radius:999px}
+.shuffle:hover{background:#000}
+.credit{margin-top:14px;font:600 11px/1.5 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#FFE3D6}
+@media (max-width:900px){.es{grid-template-columns:1fr}.table{height:480px}}
+@media (max-width:460px){.table{height:400px}.print{width:52%}}
+
+/* ---------- profession world ---------- */
+.prof-sec{background:var(--navy);color:var(--on-navy);position:relative}
+.prof-sec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.prof-sec .wrap{position:relative}
+.prof-sec .sec-head h2{font-stretch:58%;font-weight:800}
+.prof-sec .sec-head p{color:#B9CCE2}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chips button{all:unset;cursor:pointer;font:600 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:9px 13px;border-radius:999px;border:1px solid #ffffff38;color:var(--on-navy)}
+.chips button[aria-pressed="true"]{background:var(--sky);color:var(--navy);border-color:var(--sky)}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.proj{background:var(--navy-2);border:1px solid #ffffff1c;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:opacity .3s,transform .3s}
+.proj[hidden]{display:none!important}
+.proj figure{margin:0;background:#fff;aspect-ratio:16/8;overflow:hidden;display:grid;place-items:center;position:relative}
+.proj figure img{width:100%;height:100%;object-fit:contain;padding:10px}
+.proj figure.dark{background:#0A1828}
+.proj .in{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.proj .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font:600 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--sky)}
+.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#ffffff14}
+.pill.wip{background:#F5B94233;color:#FFD37A}
+.proj h3{font:800 26px/1.05 var(--f-display);font-stretch:85%}
+.proj p{font-size:15px;color:#C7D6E8;line-height:1.55}
+.methods{display:flex;flex-wrap:wrap;gap:6px}
+.methods span{font:500 12px/1 var(--f-mono);background:#ffffff10;border:1px solid #ffffff1f;padding:6px 8px;border-radius:4px;color:#E2ECF8}
+.proj .gh{margin-top:auto;padding-top:6px;font:600 13px/1 var(--f-mono);color:var(--sky);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.proj .gh:hover{text-decoration:underline}
+.stages{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:100%;padding:18px}
+.stage{border-radius:4px;padding:10px 10px 12px;font:500 11px/1.35 var(--f-mono);color:#B9CCE2;border:1px dashed #ffffff30;min-height:84px;display:flex;flex-direction:column;gap:6px}
+.stage b{font:700 10px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.stage.done{border:1px solid var(--sky);background:#C5E4FF14;color:var(--on-navy)}
+.stage.done b{color:var(--sky)}
+@media (max-width:820px){.projects{grid-template-columns:1fr}}
+@media (max-width:460px){.stages{grid-template-columns:1fr 1fr}}
+
+.edu{margin-top:64px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.edu > div{border-top:2px solid var(--sky);padding-top:18px}
+.edu h3{font:800 24px/1.1 var(--f-display);font-stretch:85%}
+.edu .when{font:600 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:10px}
+.edu p{color:#C7D6E8;font-size:15px;margin-top:8px}
+@media (max-width:820px){.edu{grid-template-columns:1fr}}
+
+/* ---------- where they meet ---------- */
+.meet{background:linear-gradient(90deg,var(--red) 0 50%,var(--navy) 50% 100%);color:#fff}
+.meet-in{background:var(--paper);color:var(--ink);border-radius:8px;padding:48px max(20px,4vw);box-shadow:0 30px 60px #0003}
+.meet h2{font-size:clamp(36px,5.4vw,72px);font-weight:900;text-transform:uppercase;text-align:center}
+.meet h2 .a{color:var(--red);font-stretch:150%;font-style:italic}
+.meet h2 .b{color:var(--navy-text);font-stretch:60%}
+.meet .lede{text-align:center;max-width:58ch;margin:16px auto 0;color:var(--muted)}
+.venn{position:relative;max-width:860px;margin:40px auto 0;aspect-ratio:1.75/1}
+.circle{position:absolute;top:0;width:57%;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 6%;transition:opacity .3s}
+.circle.c1{left:0;background:color-mix(in srgb,var(--red) 16%,transparent);border:2px solid var(--red);align-items:flex-start}
+.circle.c2{right:0;background:color-mix(in srgb,var(--navy-text) 12%,transparent);border:2px solid var(--navy-text);align-items:flex-end;text-align:right}
+.circle h4,.overlap h4{margin:0 0 4px;font:700 11px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase}
+.circle.c1 h4{color:var(--red)}
+.circle.c2 h4{color:var(--navy-text)}
+.circle span,.overlap span{font-size:14px;line-height:1.3}
+.circle.c1 span{max-width:46%} .circle.c2 span{max-width:46%}
+.overlap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:23%;text-align:center;display:flex;flex-direction:column;gap:7px;z-index:2}
+.overlap span{font-weight:700}
+.venn:hover .circle{opacity:.55}
+.venn .circle:hover{opacity:1}
+@media (max-width:720px){
+  .venn{aspect-ratio:auto;display:grid;gap:12px}
+  .circle,.overlap{position:static;width:auto;aspect-ratio:auto;border-radius:10px;padding:18px;transform:none;align-items:flex-start!important;text-align:left!important}
+  .circle span{max-width:none!important}
+  .overlap{border:2px dashed var(--muted);border-radius:10px;order:-1}
+}
+.meet-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+.meet-proof div{border-top:1px solid var(--line);padding-top:14px}
+.meet-proof b{display:block;font:800 20px/1.15 var(--f-display);font-stretch:90%}
+.meet-proof p{font-size:15px;color:var(--muted);margin-top:6px}
+@media (max-width:820px){.meet-proof{grid-template-columns:1fr}}
+
+/* ---------- journey ---------- */
+.journey{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:0}
+.journey::before{content:"";position:absolute;left:131px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.journey li{display:grid;grid-template-columns:110px 44px minmax(0,1fr);align-items:start;padding-block:14px;transition:opacity .3s}
+.journey time{font:600 12px/1.4 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:4px;text-align:right}
+.journey .dot{width:16px;height:16px;border-radius:50%;margin:5px auto 0;position:relative;z-index:1;border:3px solid var(--paper)}
+.journey li[data-side="passion"] .dot{background:var(--red)}
+.journey li[data-side="profession"] .dot{background:var(--navy-text)}
+.journey li[data-side="both"] .dot{background:linear-gradient(90deg,var(--red) 50%,var(--navy-2) 50%)}
+.journey h3{font:700 18px/1.3 var(--f-body)}
+.journey h3 small{font:500 14px/1 var(--f-body);color:var(--muted)}
+.journey p{font-size:15px;color:var(--muted);margin-top:4px;max-width:66ch}
+.journey .place{display:inline-block;margin-top:2px;font:600 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.journey li.move h3{font:800 22px/1.1 var(--f-display);font-stretch:120%;text-transform:uppercase}
+@media (max-width:620px){
+  .journey::before{left:7px}
+  .journey li{grid-template-columns:16px minmax(0,1fr);column-gap:14px}
+  .journey time{grid-column:2;text-align:left;padding:0 0 4px}
+  .journey .dot{grid-column:1;grid-row:1 / span 2;margin:4px 0 0}
+  .journey li > div{grid-column:2}
+}
+body[data-mode="passion"] [data-side="profession"],
+body[data-mode="profession"] [data-side="passion"]{opacity:.22}
+body[data-mode="passion"] .proj[data-side="profession"],
+body[data-mode="profession"] .reel{opacity:.3}
+
+/* ---------- toolkit ---------- */
+.kit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.kit h3{font:700 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid currentColor}
+.kit .p h3{color:var(--red)}
+.kit .b h3{color:var(--hood-text)}
+.kit .d h3{color:var(--navy-text)}
+.kit ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+.kit li{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:6px 10px;font-size:14px}
+.certs{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.cert{border-left:3px solid var(--line);padding:4px 0 4px 14px}
+.cert b{display:block;font-weight:600;font-size:15px}
+.cert span{font:500 12px/1.4 var(--f-mono);color:var(--muted)}
+@media (max-width:820px){.kit{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{background:var(--night);color:#F1F3F6;padding-block:88px 56px}
+.contact h2{font-size:clamp(44px,8vw,120px);font-weight:900;text-transform:uppercase;line-height:.88}
+.contact h2 .a{font-stretch:150%;font-style:italic;color:var(--red)}
+.contact h2 .b{font-stretch:58%;color:var(--sky)}
+.contact .lede{margin-top:20px;color:#AEB9C6;max-width:56ch}
+.mailrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px}
+.mail{font:600 clamp(16px,2.4vw,24px)/1.2 var(--f-mono);user-select:all;word-break:break-all}
+.copybtn{all:unset;cursor:pointer;font:600 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border-radius:999px;background:var(--red);color:#fff}
+.copybtn:hover{background:var(--red-deep)}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.socials a{text-decoration:none;border:1px solid #ffffff30;border-radius:999px;padding:10px 16px;font-size:15px}
+.socials a:hover{border-color:#fff}
+.foot{margin-top:64px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:500 12px/1.5 var(--f-mono);color:#7F8B99;letter-spacing:.04em}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:#0B0F14EE;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;max-height:100%}
+.lb img{max-height:calc(100vh - 140px);width:auto;box-shadow:0 30px 60px #0008}
+.lb figcaption{color:#E8EEF5;font:500 13px/1.4 var(--f-mono);text-align:center}
+.lb button{all:unset;cursor:pointer;position:absolute;color:#fff;font:600 13px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:12px 14px;border-radius:999px;background:#ffffff1a}
+.lb button:hover{background:#ffffff33}
+.lb .x{top:max(16px,env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px))}
+.lb .pv{left:max(16px,env(safe-area-inset-left,0px));top:50%}
+.lb .nx{right:max(16px,env(safe-area-inset-right,0px));top:50%}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">PRI THAKUR</a>
+    <nav aria-label="Sections">
+      <a href="#passion">Content</a>
+      <a href="#profession">Data</a>
+      <a href="#meet">Where they meet</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="mode" role="group" aria-label="Highlight">
+      <button type="button" data-m="passion" aria-pressed="false">Passion</button>
+      <button type="button" data-m="both" aria-pressed="true">Both</button>
+      <button type="button" data-m="profession" aria-pressed="false">Profession</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-label="Introduction">
+  <a class="side passion" href="#passion">
+        <img src="assets/img/pri-content.jpg" alt="Priyanshu laughing behind a Polaroid camera on a red background" width="800" height="1137">
+    <div class="copy">
+      <span class="tag">Passion · Content creation</span>
+      <div class="label">Passion</div>
+      <p class="line">Short-form video, photography and stories that make people stop scrolling.</p>
+      <span class="go">Watch the work ↓</span>
+    </div>
+  </a>
+  <a class="side profession" href="#profession">
+        <img src="assets/img/pri-data.jpg" alt="Priyanshu in his MMU graduation gown in St Peter's Square, Manchester" width="1000" height="1778">
+    <div class="copy">
+      <span class="tag">Profession · Data science</span>
+      <div class="label">Profession</div>
+      <p class="line">MSc Data Science, Distinction. Pipelines, models and analysis that turn data into decisions.</p>
+      <span class="go">See the projects ↓</span>
+    </div>
+  </a>
+  <div class="namecard">
+    <h1>Priyanshu Thakur</h1>
+    <p>Manchester, UK · Mumbai roots</p>
+    <div class="split"><i style="background:var(--red)"></i>Creator<span aria-hidden="true">+</span>Data scientist<i style="background:var(--navy-2)"></i></div>
+  </div>
+</section>
+
+<section class="intro wrap" aria-labelledby="intro-h">
+  <div class="grid">
+    <h2 id="intro-h">I tell stories with a <em>camera</em> and check them with <b>data</b>.</h2>
+    <div class="body">
+      <p>I'm Pri. Content creation has been the backbone of everything I've done, from making campaign content at my college in Mumbai to presenting reels for <strong>Unite Students</strong> in Manchester and shooting events for <strong>Electric Shuffle</strong>.</p>
+      <p>Alongside it, I studied the other side of the screen: a <strong>BSc in Information Technology</strong>, then an <strong>MSc in Data Science with Distinction</strong> from Manchester Metropolitan University. I build data pipelines, machine learning models and statistical analyses, and I publish them on GitHub.</p>
+      <p>So I know what makes content land, and I know how to measure whether it did.</p>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat n"><b>Distinction</b><span>MSc Data Science, Manchester Metropolitan University</span></div>
+    <div class="stat r"><b>3 years</b><span>creating content for brands in Mumbai and Manchester</span></div>
+    <div class="stat n"><b>4 projects</b><span>public on GitHub: health, finance, marketing, social</span></div>
+    <div class="stat r"><b>May 2026</b><span>Employee of the Month at Electric Shuffle Manchester</span></div>
+  </div>
+</section>
+
+<!-- ================= PASSION ================= -->
+<section class="passion-sec sec" id="passion" aria-labelledby="passion-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="passion-h">Passion</h2>
+      <p>Reels I presented, shot and edited, and the event photography I captured for brands. Tap a phone to play with sound.</p>
+    </div>
+
+    <div class="reels">
+      <article class="reel" data-side="passion">
+        <div class="phone"><video src="assets/video/unite-room-tour.mp4" poster="assets/video/unite-room-tour.jpg" preload="none" playsinline controls></video><button class="play" type="button" aria-label="Play Unite Students room tour"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button></div>
+        <span class="who">Unite Students · 2025</span>
+        <h3>Room tour</h3>
+        <p>A presenter-led walk through student life in a Unite room, from key card to study desk.</p>
+      </article>
+      <article class="reel" data-side="passion">
+        <div class="phone"><video src="assets/video/unite-budgeting.mp4" poster="assets/video/unite-budgeting.jpg" preload="none" playsinline controls></video><button class="play" type="button" aria-label="Play managing expenses explainer"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button></div>
+        <span class="who">Made for Unite Students</span>
+        <h3>Managing expenses as an international student</h3>
+        <p>A scripted explainer: transport hacks, budget shopping, student discounts and the Blackbullion app for National Student Money Week.</p>
+      </article>
+      <article class="reel" data-side="passion">
+        <div class="phone"><video src="assets/video/es-christmas.mp4" poster="assets/video/es-christmas.jpg" preload="none" playsinline controls></video><button class="play" type="button" aria-label="Play Electric Shuffle Christmas reel"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button></div>
+        <span class="who">Electric Shuffle · Manchester</span>
+        <h3>Christmas at Electric Shuffle</h3>
+        <p>Bar team, live music and festive crowds, cut to the pace of a busy December night.</p>
+      </article>
+      <article class="reel" data-side="passion">
+        <div class="phone"><video src="assets/video/es-summer.mp4" poster="assets/video/es-summer.jpg" preload="none" playsinline controls></video><button class="play" type="button" aria-label="Play Electric Shuffle venue reel"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button></div>
+        <span class="who">Electric Shuffle · Manchester</span>
+        <h3>A night at the venue</h3>
+        <p>DJ sets, dancing and the bar in full swing, from the neon sign outside to the last round.</p>
+      </article>
+    </div>
+
+    <div class="es" data-side="both">
+      <div>
+        <span class="eyebrow">Mar 2026 – present</span>
+        <h3>Electric Shuffle</h3>
+        <p class="role">Receptionist &amp; Games Master · Manchester</p>
+        <div class="text">
+          <p>I started on reception and quickly worked across the whole venue: hosting shuffleboard games, supporting the floor, the bar and the kitchen, and keeping everything lined up on busy nights.</p>
+          <p>At events I pick up a camera too. I shot the team's weekend on a disposable, and the set was published on Electric Shuffle's official Instagram. I also film clips the team can use in future content.</p>
+        </div>
+        <div class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 16.8 6.1 20l1.3-6.5L2.5 8.9l6.6-.8z"/></svg>Employee of the Month · May 2026</div>
+        <div class="softs" aria-label="Skills used">
+          <span>Front of house</span><span>Hosting groups</span><span>Working under pressure</span><span>Teamwork across floor, bar &amp; kitchen</span><span>Event photography</span>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/p/DePZ4OwArUC/" target="_blank" rel="noopener">See the published post ↗</a></div>
+      </div>
+      <div>
+        <div class="table" id="table" aria-label="Disposable camera photos, select one to enlarge"></div>
+        <p class="credit">Shot on disposable for @electricshuffle · published Oct 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROFESSION ================= -->
+<section class="prof-sec sec" id="profession" aria-labelledby="prof-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="prof-h">Profession</h2>
+      <p>Four public projects, each built end to end and tested, covering health, finance, marketing and social media.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter projects">
+      <button type="button" aria-pressed="true" data-f="all">All</button>
+      <button type="button" aria-pressed="false" data-f="ml">Machine learning</button>
+      <button type="button" aria-pressed="false" data-f="pipeline">Data pipelines</button>
+      <button type="button" aria-pressed="false" data-f="analytics">Analytics &amp; stats</button>
+    </div>
+    <div class="projects">
+      <article class="proj" data-tags="ml" data-side="profession">
+        <figure><img src="assets/img/confusion_matrix.png" alt="Confusion matrix from the mammogram classifier" loading="lazy"></figure>
+        <div class="in">
+          <div class="meta"><span>Health · MSc dissertation</span><span class="pill">PyTorch</span></div>
+          <h3>Breast cancer detection with deep learning</h3>
+          <p>A ResNet-50 transfer-learning model that classifies mammogram lesions as benign or malignant on the CBIS-DDSM dataset. Repackaged from my dissertation into a reproducible pipeline, from data prep through training and evaluation to a demo app, with an honest write-up of its limitations.</p>
+          <div class="methods"><span>Transfer learning</span><span>ResNet-50</span><span>Stratified split</span><span>F1-based model selection</span><span>Augmentation &amp; early stopping</span><span>Streamlit</span></div>
+          <a class="gh" href="https://github.com/priyanshuthakkur/breast-cancer-detection-deep-learning" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+      <article class="proj" data-tags="analytics ml" data-side="both">
+        <figure><img src="assets/img/segment_scatter.png" alt="Customer segments plotted by recency and spend" loading="lazy"></figure>
+        <div class="in">
+          <div class="meta"><span>Marketing · Retail customers</span><span class="pill">Python · SQL</span></div>
+          <h3>Marketing campaign analytics</h3>
+          <p>Answers two questions every marketing team asks: who should we target next, and did that campaign actually work? Segments customers into four named personas and tests campaign performance statistically.</p>
+          <div class="methods"><span>RFM analysis</span><span>K-Means clustering</span><span>SQLite aggregation</span><span>Chi-square test</span><span>Two-proportion z-test</span><span>Streamlit dashboard</span></div>
+          <a class="gh" href="https://github.com/priyanshuthakkur/marketing-campaign-analytics" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+      <article class="proj" data-tags="pipeline" data-side="profession">
+        <figure><img src="assets/img/closing_prices.png" alt="Closing price trend chart for tracked stocks" loading="lazy"></figure>
+        <div class="in">
+          <div class="meta"><span>Finance</span><span class="pill">Python · SQL</span></div>
+          <h3>Stock market data pipeline</h3>
+          <p>Pulls daily prices from a live REST API, cleans and structures them, loads them into a SQL database and answers questions with SQL and charts. Staged like production data infrastructure, scaled down to run on a laptop.</p>
+          <div class="methods"><span>REST API ingestion</span><span>pandas cleaning</span><span>SQL schema design</span><span>Aggregate queries</span><span>pytest</span></div>
+          <a class="gh" href="https://github.com/priyanshuthakkur/stock-market-data-pipeline" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+      <article class="proj" data-tags="pipeline analytics" data-side="both">
+        <figure class="dark">
+          <div class="stages" aria-label="Project progress">
+            <div class="stage done"><b>✓ Done</b>Ingestion: YouTube API to DuckDB</div>
+            <div class="stage"><b>Next</b>dbt models &amp; data tests</div>
+            <div class="stage"><b>Planned</b>Statistical analysis</div>
+            <div class="stage"><b>Planned</b>Streamlit dashboard + CI</div>
+          </div>
+        </figure>
+        <div class="in">
+          <div class="meta"><span>Social media · Where they meet</span><span class="pill wip">In progress</span></div>
+          <h3>Social media engagement analytics</h3>
+          <p>An analytics engineering project on YouTube data from UK fitness and nutrition brands, asking what a social team cares about: which content drives engagement, and when should we post?</p>
+          <div class="methods"><span>YouTube Data API</span><span>DuckDB</span><span>dbt</span><span>Raw snapshot history</span><span>pytest</span></div>
+          <a class="gh" href="https://github.com/priyanshuthakkur/social-media-engagement-analytics" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="edu">
+      <div data-side="profession">
+        <p class="when">Sep 2024 – Oct 2025 · Manchester</p>
+        <h3>MSc Data Science, Distinction</h3>
+        <p>Manchester Metropolitan University. Advanced Machine Learning, Deep Learning, Computational Mathematics &amp; Statistics, Data Management &amp; Governance, Algorithms &amp; Data Structures.</p>
+      </div>
+      <div data-side="profession">
+        <p class="when">Jun 2021 – Apr 2024 · Mumbai</p>
+        <h3>BSc Information Technology</h3>
+        <p>Vidyalankar School of IT. Python, Data Structures, Database Management Systems, Artificial Intelligence, Business Intelligence. Final project: a Movie Success Predictor in Python.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHERE THEY MEET ================= -->
+<section class="meet sec" id="meet" aria-labelledby="meet-h">
+  <div class="wrap">
+    <div class="meet-in">
+      <h2 id="meet-h"><span class="a">Passion</span> × <span class="b">Profession</span></h2>
+      <p class="lede">Most people bring one of these to a team. The overlap is where I'm most useful: content made with an analyst's eye, and analysis that understands audiences.</p>
+      <div class="venn">
+        <div class="circle c1"><h4>Content</h4><span>Short-form video</span><span>Presenting on camera</span><span>Photography</span><span>Editing &amp; post-production</span><span>Copywriting</span></div>
+        <div class="circle c2"><h4>Data</h4><span>Python &amp; SQL</span><span>Machine learning</span><span>Data pipelines</span><span>Dashboards</span><span>Data validation</span></div>
+        <div class="overlap"><h4>Both</h4><span>Engagement analytics</span><span>Campaign testing</span><span>Trend &amp; competitor analysis</span><span>Storytelling with data</span></div>
+      </div>
+      <div class="meet-proof">
+        <div><b>Calibehr, Mumbai</b><p>Ran the brand's social channels and analysed campaign results, lifting engagement by 20%. Validated multi-source campaign data with zero discrepancies flagged.</p></div>
+        <div><b>VSIT, Mumbai</b><p>Led multimedia content and backed it with competitor and trend analysis, contributing to a 30% lift in digital engagement.</p></div>
+        <div><b>On GitHub now</b><p>The social media engagement project brings both sides together: measuring which content and posting times actually perform.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section class="sec wrap" id="journey" aria-labelledby="journey-h">
+  <div class="sec-head">
+    <h2 id="journey-h" style="font-stretch:110%">Journey</h2>
+    <p style="color:var(--muted)">Mumbai to Manchester. Red dots are content, blue dots are data, split dots are both. Use the switch at the top to focus on one side.</p>
+  </div>
+  <ol class="journey">
+    <li data-side="profession"><time>2021 – 2024</time><span class="dot"></span><div><h3>BSc Information Technology <small>· VSIT</small></h3><span class="place">Mumbai, India</span><p>Python, databases, AI and business intelligence. Built a Movie Success Predictor as my final project.</p></div></li>
+    <li data-side="passion"><time>Jun 2023 – Apr 2024</time><span class="dot"></span><div><h3>Content Developer Intern <small>· VSIT</small></h3><span class="place">Mumbai, India</span><p>Led videos, graphics and social posts for the college, kept the content calendar running and used trend analysis to shape strategy.</p></div></li>
+    <li data-side="both"><time>Jul – Aug 2024</time><span class="dot"></span><div><h3>Digital Marketing Intern <small>· Calibehr</small></h3><span class="place">Mumbai, India</span><p>Managed social media, analysed campaign results with senior executives and validated campaign data before reporting.</p></div></li>
+    <li data-side="both" class="move"><time>Sep 2024</time><span class="dot"></span><div><h3>Mumbai → Manchester</h3></div></li>
+    <li data-side="profession"><time>Sep 2024 – Oct 2025</time><span class="dot"></span><div><h3>MSc Data Science, Distinction <small>· Manchester Met</small></h3><span class="place">Manchester, UK</span><p>Machine learning, deep learning, statistics and data governance. Dissertation on breast cancer detection with deep learning.</p></div></li>
+    <li data-side="passion"><time>Jan – Jul 2025</time><span class="dot"></span><div><h3>Content Creator <small>· Unite Students</small></h3><span class="place">Manchester, UK</span><p>Presented, shot and edited reels, photos and stories about student life for Unite's national campaigns, on brand and on deadline.</p></div></li>
+    <li data-side="both"><time>Mar 2026</time><span class="dot"></span><div><h3>Receptionist &amp; Games Master <small>· Electric Shuffle</small></h3><span class="place">Manchester, UK</span><p>Front of house and game hosting, plus event photos and video for the brand.</p></div></li>
+    <li data-side="both"><time>May 2026</time><span class="dot"></span><div><h3>Employee of the Month</h3><span class="place">Electric Shuffle Manchester</span><p>Recognised for working across reception, floor, bar and kitchen.</p></div></li>
+    <li data-side="profession"><time>Jul 2026</time><span class="dot"></span><div><h3>Graduated</h3><span class="place">Manchester, UK</span><p>MSc Data Science with Distinction.</p></div></li>
+    <li data-side="profession"><time>Sep – Oct 2026</time><span class="dot"></span><div><h3>Four portfolio projects on GitHub</h3><span class="place">github.com/priyanshuthakkur</span><p>Health, finance, marketing and social media, each built end to end with tests.</p></div></li>
+  </ol>
+</section>
+
+<!-- ================= TOOLKIT ================= -->
+<section class="sec wrap" id="toolkit" aria-labelledby="kit-h" style="padding-top:0">
+  <div class="sec-head"><h2 id="kit-h" style="font-stretch:110%">Toolkit</h2></div>
+  <div class="kit">
+    <div class="p" data-side="passion"><h3>Content</h3><ul><li>Instagram Reels</li><li>Short-form video</li><li>Presenting</li><li>Photography</li><li>Videography</li><li>Lighting</li><li>CapCut</li><li>VN Video Editor</li><li>Adobe Photoshop</li><li>Copywriting</li><li>Content calendars</li><li>Brand guidelines</li></ul></div>
+    <div class="b" data-side="both"><h3>Both</h3><ul><li>Campaign analytics</li><li>Social media engagement</li><li>Competitor analysis</li><li>Trendspotting</li><li>Google Analytics</li><li>Excel (advanced)</li><li>SEO</li><li>Stakeholder communication</li></ul></div>
+    <div class="d" data-side="profession"><h3>Data</h3><ul><li>Python</li><li>pandas</li><li>NumPy</li><li>scikit-learn</li><li>PyTorch</li><li>SQL</li><li>DuckDB</li><li>dbt</li><li>Power BI</li><li>Tableau</li><li>Streamlit</li><li>Git &amp; GitHub</li><li>pytest</li><li>Statistical testing</li></ul></div>
+  </div>
+  <div class="certs">
+    <div class="cert" data-side="profession"><b>Deloitte Data Analytics Job Simulation</b><span>Forage · 2026</span></div>
+    <div class="cert" data-side="profession"><b>British Airways Data Science Job Simulation</b><span>Forage · 2026</span></div>
+    <div class="cert" data-side="profession"><b>SQL for Data Science</b><span>UC Davis via Coursera · 2025</span></div>
+    <div class="cert" data-side="profession"><b>Introduction to Data Science</b><span>IBM via Coursera · 2023</span></div>
+    <div class="cert" data-side="profession"><b>Introduction to Artificial Intelligence</b><span>Great Learning · 2023</span></div>
+    <div class="cert" data-side="passion"><b>Google Digital Unlocked</b><span>Google · 2020</span></div>
+    <div class="cert" data-side="passion"><b>Digital Marketing</b><span>Freelancers Academy · 2019</span></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <h2 id="contact-h"><span class="a">Let's make</span><br><span class="b">something measurable</span></h2>
+    <p class="lede">Open to graduate roles in data analytics, data science and BI, and to content and social media roles. Based in Manchester, open to roles across the UK. Eligible to work in the UK (Graduate visa).</p>
+    <div class="mailrow"><span class="mail" id="mail">thakur.priyanshu715@gmail.com</span><button class="copybtn" type="button" id="copy">Copy email</button></div>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/priyanshut99" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/priyanshuthakkur" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.instagram.com/priyanshuthakkur/" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="assets/Priyanshu_Thakur_Portfolio.pdf" target="_blank" rel="noopener">PDF portfolio ↗</a>
+    </div>
+    <div class="foot"><span>© 2026 Priyanshu Nilesh Thakur</span><span>Manchester · Mumbai</span></div>
+  </div>
+</section>
+</main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="x" type="button" id="lbx">Close ✕</button>
+  <button class="pv" type="button" id="lbp" aria-label="Previous photo">←</button>
+  <figure><img id="lbimg" alt=""><figcaption id="lbcap"></figcaption></figure>
+  <button class="nx" type="button" id="lbn" aria-label="Next photo">→</button>
+</div>
+
+<script>
+(function(){
+  // ---- mode switch ----
+  const modeBtns=[...document.querySelectorAll('.mode button')];
+  function setMode(m){document.body.dataset.mode=m;modeBtns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===m)));try{localStorage.setItem('pri-mode',m)}catch(e){}}
+  modeBtns.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
+  let saved='both';try{saved=localStorage.getItem('pri-mode')||'both'}catch(e){}
+  setMode(saved);
+
+  // ---- reels: one at a time ----
+  const vids=[...document.querySelectorAll('.phone video')];
+  document.querySelectorAll('.phone .play').forEach(btn=>{
+    btn.addEventListener('click',()=>{const v=btn.previousElementSibling;vids.forEach(o=>{if(o!==v)o.pause()});btn.parentElement.classList.add('playing');v.play().catch(()=>{})});
+  });
+  vids.forEach(v=>v.addEventListener('play',()=>{vids.forEach(o=>{if(o!==v)o.pause()});v.parentElement.classList.add('playing')}));
+
+  // ---- project filter ----
+  const chips=[...document.querySelectorAll('.chips button')];
+  chips.forEach(c=>c.addEventListener('click',()=>{
+    chips.forEach(x=>x.setAttribute('aria-pressed',String(x===c)));
+    const f=c.dataset.f;
+    document.querySelectorAll('.proj').forEach(p=>{p.hidden=!(f==='all'||p.dataset.tags.split(' ').includes(f))});
+  }));
+
+  // ---- disposable prints ----
+  const photos=[
+    ['disposable-3.jpg','Bar team mid-shake','The bar team, mid-shake'],
+    ['disposable-1.jpg','DJ on the decks','The DJ behind the decks'],
+    ['disposable-4.jpg','Live music, Thursday 6pm','Live music by the window'],
+    ['disposable-5.jpg','Signature cocktails','Signature cocktails under the neon wheel'],
+    ['disposable-6.jpg','Floor team','The floor team'],
+    ['disposable-2.jpg','Birthday at the bar','Guests at the bar'],
+    ['disposable-7.jpg','Saturday night','Saturday night under the disco lanterns']
+  ];
+  const table=document.getElementById('table');
+  const prints=photos.map((p,i)=>{
+    const b=document.createElement('button');b.type='button';b.className='print';
+    b.setAttribute('aria-label','Enlarge photo: '+p[2]);
+    b.innerHTML='<img src="assets/gallery/'+p[0]+'" alt="'+p[2]+'" loading="lazy" width="900" height="1253"><i>'+p[1]+'</i>';
+    b.addEventListener('click',()=>openLb(i));
+    table.appendChild(b);return b;
+  });
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function scatter(first){
+    const W=table.clientWidth,H=table.clientHeight;
+    const pw=prints[0].offsetWidth,ph=prints[0].offsetHeight;
+    const order=first?prints.map((_,i)=>i):prints.map((_,i)=>i).sort(()=>Math.random()-.5);
+    order.forEach((idx,k)=>{
+      const col=k%4,row=Math.floor(k/4);
+      const x=Math.max(0,Math.min(W-pw,(W-pw)*(col/3)+(Math.random()-.5)*W*.1));
+      const y=Math.max(0,Math.min(H-ph-30,(H-ph-30)*(row)+(Math.random()-.5)*30));
+      const r=(Math.random()-.5)*(first?14:22);
+      const el=prints[idx];el.style.left='0';el.style.top='0';
+      el.style.transform='translate('+x+'px,'+y+'px) rotate('+r.toFixed(1)+'deg)';
+      el.style.zIndex=String(k+1);
+    });
+  }
+  const sh=document.createElement('button');sh.type='button';sh.className='shuffle';sh.textContent='Shuffle ↻';
+  sh.addEventListener('click',()=>scatter(false));table.appendChild(sh);
+  requestAnimationFrame(()=>scatter(true));
+  addEventListener('resize',()=>scatter(true));
+
+  // ---- lightbox ----
+  const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),lbcap=document.getElementById('lbcap');
+  let cur=0,lastFocus=null;
+  function show(i){cur=(i+photos.length)%photos.length;lbimg.src='assets/gallery/'+photos[cur][0];lbimg.alt=photos[cur][2];lbcap.textContent=photos[cur][2]+' · '+(cur+1)+' / '+photos.length+' · shot on disposable for @electricshuffle'}
+  function openLb(i){lastFocus=document.activeElement;show(i);lb.hidden=false;document.getElementById('lbx').focus()}
+  function closeLb(){lb.hidden=true;if(lastFocus)lastFocus.focus()}
+  document.getElementById('lbx').onclick=closeLb;
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+  addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+
+  // ---- copy email ----
+  const copyBtn=document.getElementById('copy');
+  copyBtn.addEventListener('click',()=>{
+    const t=document.getElementById('mail').textContent;
+    const done=()=>{copyBtn.textContent='Copied';setTimeout(()=>copyBtn.textContent='Copy email',1800)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('mail'));const s=getSelection();s.removeAllRanges();s.addRange(r);copyBtn.textContent='Selected, press copy'};
+    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
+</body>
+</html>
