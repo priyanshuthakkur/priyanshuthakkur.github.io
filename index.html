@@ -345,7 +345,7 @@ body[data-mode="profession"] .reel{opacity:.3}
 <main id="top">
 <section class="hero" aria-label="Introduction">
   <a class="side passion" href="#passion">
-        <img src="assets/img/pri-content.jpg" alt="Priyanshu laughing behind a Polaroid camera on a red background" width="800" height="1137">
+        <img src="assets/img/priyanshu-content.jpg" alt="Priyanshu laughing behind a Polaroid camera on a red background" width="800" height="1137">
     <div class="copy">
       <span class="tag">Passion · Content creation</span>
       <div class="label">Passion</div>
@@ -354,7 +354,7 @@ body[data-mode="profession"] .reel{opacity:.3}
     </div>
   </a>
   <a class="side profession" href="#profession">
-        <img src="assets/img/pri-data.webp" alt="Priyanshu in his Manchester Metropolitan University graduation gown and hood" width="772" height="950">
+        <img src="assets/img/priyanshu-data.webp" alt="Priyanshu in his Manchester Metropolitan University graduation gown and hood" width="772" height="950">
     <div class="copy">
       <span class="tag">Profession · Data science</span>
       <div class="label">Profession</div>
@@ -609,9 +609,9 @@ body[data-mode="profession"] .reel{opacity:.3}
 (function(){
   // ---- mode switch ----
   const modeBtns=[...document.querySelectorAll('.mode button')];
-  function setMode(m){document.body.dataset.mode=m;modeBtns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===m)));try{localStorage.setItem('pri-mode',m)}catch(e){}}
+  function setMode(m){document.body.dataset.mode=m;modeBtns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===m)));try{localStorage.setItem('priyanshu-mode',m)}catch(e){}}
   modeBtns.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
-  let saved='both';try{saved=localStorage.getItem('pri-mode')||'both'}catch(e){}
+  let saved='both';try{saved=localStorage.getItem('priyanshu-mode')||'both'}catch(e){}
   setMode(saved);
 
   // ---- reels: one at a time ----
