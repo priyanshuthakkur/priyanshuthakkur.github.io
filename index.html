@@ -36,6 +36,9 @@
   --hood-text:#9B1B30;
   --night:#0B121B;        /* fixed dark for bar + contact, both themes */
   --on-red:#FFF6F0;
+  --stone:#F3F1ED;        /* warm stone: Profession backdrop + Passion text */
+  --stone-light:#F7F5F1;
+  --stone-edge:#B9AD9C;
   --on-navy:#EAF3FF;
   --f-display:"Anybody","Arial Narrow",Impact,sans-serif;
   --f-body:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -79,16 +82,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:760px){.bar nav{display:none}}
 
 /* ---------- split hero ---------- */
-.hero{display:flex;min-height:min(86vh,760px);position:relative;overflow:hidden;background:var(--navy-photo)}
+.hero{display:flex;min-height:min(86vh,760px);position:relative;overflow:hidden;background:var(--stone)}
 .side{position:relative;flex:1 1 0;min-width:0;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;text-decoration:none}
-.side.passion{background:var(--red);color:var(--on-red)}
-.side.profession{background:var(--navy-photo);color:var(--on-navy)}
+.side.passion{background:var(--red);color:var(--stone)}
+.side.profession{background:radial-gradient(ellipse 70% 72% at 34% 40%,var(--stone-light) 0%,var(--stone) 38%,var(--stone-edge) 125%);color:var(--red)}
 .hero:hover .side{flex-grow:.8}
 .hero .side:hover{flex-grow:1.35}
 .side img{position:absolute;bottom:0;height:92%;width:auto;max-width:none;object-fit:contain;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .side.passion img{right:2%;height:84%;transform-origin:bottom right}
-.side.profession img{left:-1%;height:84%;transform-origin:bottom left}
-.side.profession .line{max-width:24ch}
+.side.profession img{left:0;height:74%;transform-origin:bottom left;-webkit-mask-image:linear-gradient(90deg,#000 74%,transparent 100%);mask-image:linear-gradient(90deg,#000 74%,transparent 100%)}
+.side.profession .line{max-width:22ch}
 .side:hover img{transform:scale(1.03)}
 .side .copy{position:relative;z-index:2;padding:120px max(28px,env(safe-area-inset-left,0px)) 40px;max-width:520px}
 .side.profession .copy{margin-left:auto;padding-left:28px;padding-right:max(28px,env(safe-area-inset-right,0px));text-align:right}
@@ -96,7 +99,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .side.passion .label{font-stretch:62%;font-weight:800;font-size:clamp(36px,5.4vw,88px)}
 .side.profession .label{font-stretch:62%;font-weight:800;font-size:clamp(36px,5.4vw,88px)}
 .side .line{margin-top:14px;font-size:18px;max-width:26ch}
-.side .copy{text-shadow:0 1px 14px #0000004d}
+.side.passion .copy{text-shadow:0 1px 14px #0000004d}
 .side.passion .copy{max-width:min(520px,48%)}
 .side.profession .line{margin-left:auto}
 .side .go{margin-top:18px;display:inline-flex;gap:8px;align-items:center;font:600 13px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid currentColor;padding-bottom:4px}
@@ -112,9 +115,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .side{min-height:440px}
   .side img{height:96%}
   .side.passion img{right:-10%}
-  .side.profession img{left:auto;right:-16%;height:90%}
+  .side.profession img{left:auto;right:0;height:62%;-webkit-mask-image:linear-gradient(270deg,#000 62%,transparent 99%);mask-image:linear-gradient(270deg,#000 62%,transparent 99%)}
   .side.profession .copy{margin-left:0;text-align:left;padding-left:max(24px,env(safe-area-inset-left,0px))}
   .side.profession .line{margin-left:0}
+  .side.profession .copy{max-width:56%}
     .side .copy{padding:24px max(24px,env(safe-area-inset-left,0px)) 32px;max-width:66%}
   .namecard{position:relative;left:auto;top:auto;transform:none;order:0;width:100%;max-width:none;box-shadow:none;border-radius:0;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
 }
@@ -355,7 +359,7 @@ body[data-mode="profession"] .reel{opacity:.3}
     </div>
   </a>
   <a class="side profession" href="#profession">
-        <img src="assets/img/priyanshu-data.webp" alt="Priyanshu in his Manchester Metropolitan University graduation gown and hood" width="772" height="950">
+        <img src="assets/img/priyanshu-profession.webp" alt="Priyanshu smiling in a navy suit and red tie" width="900" height="1153">
     <div class="copy">
       <span class="tag">Profession · Data science</span>
       <div class="label">Profession</div>
